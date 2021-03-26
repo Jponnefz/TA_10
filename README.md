@@ -1,3 +1,3 @@
--Valeria Vélez Granda
--Julián Ponnefz Fontalvo
--Brayan Ospina Castañeda
+Valeria Vélez Granda
+Julián Ponnefz Fontalvo
+Brayan Ospina Castañeda
