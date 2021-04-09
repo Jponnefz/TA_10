@@ -7,7 +7,7 @@ Información de cómo contactarse con nosotros vía e-mail, se creará un correo
 Datos para ingresar a la aplicación si ya está registrado y el enlace para quienes no estén registrados y deseen hacerlo.
 Hacer la base de datos para los usuarios registrados.
 ## Estética de la interfaz de entrada
-Esta semana solamente se hará enfásis en la estética de esta parte, ya que el contenido de toda la parte teorica es denso. 
+Esta semana solamente se hará énfasis en la estética de esta parte, ya que el contenido de toda la parte teórica es denso. 
 
 # Informe 04: 13 horas del viernes 23 de abril
 ## Estética de la parte teórica 
