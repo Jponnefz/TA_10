@@ -1,6 +1,6 @@
 # Informe 03: 13 horas del viernes 16 de abril
 ## Creación de contenido para usuarios no registrados
-El contenido para los usuarios no registrados es toda la parte teórica, que es la misma para los usuarios registrados, pero no tendrán acceso a toda sino a la información de que temas hay temas y una breve explicación, cabe aclarar que estos tampoco tendrán acceso a la parte prática, esto con el fin de que se registren. 
+El contenido para los usuarios no registrados es toda la parte teórica, que es la misma para los usuarios registrados, pero no tendrán acceso a toda sino a la información de que temas hay temas y una breve explicación, cabe aclarar que estos tampoco tendrán acceso a la parte práctica, esto con el fin de que se registren. 
 ## Interfaz de entrada con el contenido a tratar en la aplicación
 En la interfaz de debe ver el índice de temas de una manera concisa, aproximadamente serán 20 temas, estos relacionados a geología física, mineralogía y elementos de geología estructural.
 Información de cómo contactarse con nosotros vía e-mail, se creará un correo solo para ello.
