@@ -36,7 +36,7 @@ Seguir con al menos cinco temas
 ## Finalizar la parte práctica 
 Terminar con lo que nos haga falta de los juegos y los temas que aún no tienen esta parte. 
 ## Ajustar detalles de las funciones de la aplicación
-Seguir trabajando con los temas visuales, funcionales y los detalles, así mimso seguirle dando forma a la parte práctica que es la más difícil.
+Seguir trabajando con los temas visuales, funcionales y los detalles, así mismo seguirle dando forma a la parte práctica que es la más difícil.
 
 # Informe 09: 13 horas del viernes 28 de mayo
 ## Primer prototipo listo 
