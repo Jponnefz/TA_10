@@ -24,7 +24,7 @@ Para no dejar acumular el tema de la estética queremos ir acomodando lo que se 
 
 # Informe 06: 13 horas del viernes 7 de mayo
 ## Seguir trabajando en la parte práctica
-Aquí es donde queremos hacer más enfásis, ya que el objetivo de esta aplicación es que podamos estudiar e interiorizar los conceptos, entonces queremos que la parte practica sea bien elaborada. 
+Aquí es donde queremos hacer más énfasis, ya que el objetivo de esta aplicación es que podamos estudiar e interiorizar los conceptos, entonces queremos que la parte practica sea bien elaborada. 
 
 # Informe 07: 13 horas del viernes 14 de mayo
 ## Trabajar los modelos 3D para algunos temas que lo requieren
