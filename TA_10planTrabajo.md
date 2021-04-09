@@ -14,7 +14,7 @@ Esta semana solamente se hará énfasis en la estética de esta parte, ya que el
 Definir el diseño de la aplicación y ajustar detalles de la teoría
 Poner vídeos, bibliografía, imágenes de modelos en 3D (si es posible, más adelante queremos incorporar los modelos en 3D, de manera que el usuario pueda interactuar con él), más imágenes, enlaces para profundizar sobre algún tema, esquemas, entre otros ajustes.
 ## Función de la parte practica
-Hacer la parte práctica de al un tema, es decir, el juego.
+Hacer la parte práctica de un tema, es decir, el juego.
 
 # Informe 05: 13 horas del viernes 30 de abril
 ## Parte práctica
