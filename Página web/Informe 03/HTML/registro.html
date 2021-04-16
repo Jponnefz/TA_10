@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regístrate</title>
+</head>
+<body>
+    <h1>Bienvenido a GeologandoAndo</h1>
+    <h2>Por favor llena los siguientes campos para completar tu registro</h2>
+    <br>
+    <!--formularios-->
+<form action="archivo.php">
+  
+    <div>
+        <label for="nombre">NOMBRES</label>  
+        <input type="text" name="nombre" placeholder="Juan Andrés" id="nombre">
+    </div>
+    
+    <br>
+    
+    <div>
+        <label for="apellido">APELLIDOS</label>
+        <input type="text" name="apellido" placeholder="Vélez Granda" id="apellido">
+    </div>
+    <br>    
+    <div>
+        <label for="usuario">USUARIO</label>
+        <input type="text" name="usuario" placeholder="Username" id="usuario">
+    </div>
+    <br>    
+    
+    <div>
+        <label for="telefono">TELÉFONO</label>
+        <input type="text" name="telefono" maxlength="10" id="teléfono" placeholder="3005641239" id="teléfono">
+    </div>  
+    <br>
+    <div>
+        <label for="correo">CORREO ELECTRÓNICO</label>
+        <input type="text" name="correo"  id="correo" placeholder="Ppfont24@gmail.com" id="correo">
+    </div>  
+    <br>
+    
+    <div>
+        <label for="contraseña">CONTRASEÑA (Máx 20 carácteres)</label>
+        <input type="password" name="contraseña" maxlength="20"id="contraseña" placeholder="Password" id="contraseña"> 
+    </div>
+    <br>
+    
+    <div>
+        <label for="genero">GÉNERO</label>
+        <br>
+        <br>
+       <input type="radio">HOMBRE
+       <input type="radio">MUJER
+    </div>
+    <br>
+    
+    <div>
+        <label for="descripción">DESCRIPCIÓN</label>
+        <br>
+        <br>
+        <textarea name="mensaje" id="descripción" cols="50" rows="4"></textarea>
+    </div>
+    <br>
+    
+    <div>
+        <label for="edad">EDAD</label>
+        <input type="text" name="edad" maxlength="2" id="edad" value="18"> 
+    </div>
+    <br>
+    
+    <div>
+        <label for="fecha">FECHA DE NACIMIENTO</label>
+        <input type="date" name="" id="">
+    </div>
+    <br>
+    
+    <div>
+        <label for="">NIVEL ACADÉMICO</label>
+        <select name="selecmul">
+            <option value="PRIMARIA">PRIMARIA</option>
+            <option value="SECUNDARIA">SECUNDARIA</option>
+            <option value="MEDIA">MEDIA</option>
+            <option value="BACHILLER">BACHILLER</option>
+            <option value="PREGRADO">PREGRADO</option>
+            <option value="EGRESADO">EGRESADO</option>
+        </select>
+    </div>
+    <br>
+    
+    <div>
+        <input type="submit" value="ENVIAR">
+        <input type="color">
+    </div>
+    </form>
+    
+    <br>
+    <footer>Página creada por Valeria Vélez Granda y Julián Ponnefz Fontalvo</footer>
+       
+    </body>
+    </html>
+</body>
+</html>

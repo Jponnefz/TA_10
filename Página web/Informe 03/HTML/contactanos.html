@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+</head>
+<body>
+    <h3>Contácta con nosotros...</h3>
+    <br>
+    <!--formularios-->
+    <form action="archivo.php">
+    <div>
+        <label for="nombre">NOMBRE COMPLETO</label>  
+        <input type="text" name="nombre" placeholder="María José Gómez Ávila" id="nombre">
+    </div> 
+    
+    <br>
+    
+    <div>
+        <label for="usuario">USUARIO</label>
+        <input type="text" name="usuario" placeholder="Username" id="usuario">
+    </div>
+    <br>
+    <div>
+        <label for="correo">Correo electrónico</label>
+        <input type="text" name="correo" placeholder="Mgomez1998@gmail.com" id="correo">
+    </div>
+    <br>
+    <div>
+        <label for="">Tipo</label>
+        <select name="inquietud">
+            <option value="Solicitud">Solicitud</option>
+            <option value="Reporte">Reporte</option>
+            <option value="Sugerencias">Sugerencias</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
+    <br>
+    
+    <div>
+        <label for="opciones">Opciones</label>
+        <br>
+        <br>
+       <input type="radio">Consulta general
+       <input type="radio">Soporte técnico
+       <input type="radio">Errores
+    </div>
+    
+    <br>
+    <div>
+        <label for="descripción">DESCRIPCIÓN DE LA INQUIETUD</label>
+        <br>
+        <br>
+        <textarea name="mensaje" id="descripción" cols="50" rows="4"></textarea>
+    </div>
+    <br>
+    <div>
+        <input type="submit" value="ENVIAR">
+    </div>
+</form>
+</body>
+</html>
