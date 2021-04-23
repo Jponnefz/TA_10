@@ -1,5 +1,5 @@
-#Novedades
-##En este informe se realizaron las siguientes funciones:
+# Novedades
+## En este informe se realizaron las siguientes funciones:
 -Se crearon las vistas completas de estas dos categorías
 -Se realizó la conexión a las vistas en las categorías de Temas y Previews
 -Se realizó una mejora en el apartado visual de la primera práctica
