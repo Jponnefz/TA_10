@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Práctica 1 🌎</title>
+        <style>
+            body{
+                width: 960px;
+                margin: 0 auto;
+            }
+            h1{
+                text-align: center;
+            }
+            #pantalla{
+                border: groove 8px gold;
+                background: lightgreen;   
+            }
+            #boton{
+                background-color: red;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                font-weight: bolder;
+                padding: 3px;
+                border: solid 2px black;
+            }
+            #boton:hover{ /* Estilo que va a activar al pasar el puntero sobre el boton */
+                background-color: lightcoral;
+                font-size: 22px;
+                border: groove 4px red;
+            }
+        </style>
+        </head>
+    <body>
+        <h1>-🌋Practiquemos🌋-</h1>
+        <h3>❗ PUEDES EQUIVOCARTE MÁXIMO 5 VECES PARA SALVAR A JHON🕵️</h3>
+        <br>
+        <canvas id="pantalla" width="960px" height="450px"> <!-- etiqueta del canvas con sus medidas en la pantalla -->
+
+        </canvas>
+        <!-- El boton para recargar la pagina y asi generar una nueva palabra -->
+        <button id="boton" type="reset" onclick="javascript:window.location.reload();">🗻Otra pregunta😋</button>
+        <script>
+            
+            /* Variables */
+            var ctx;
+            var canvas;
+            var palabra;
+            var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM"
+            var colorTecla = "#585858";
+            var colorMargen = "red";
+            var inicioX = 200;
+            var inicioY = 300;
+            var lon = 35;
+            var margen = 20;
+            var pistaText = "";
+
+            /* Arreglos */
+            var teclas_array = new Array();
+            var letras_array = new Array();
+            var palabras_array = new Array();
+
+            /* Variables de control */
+            var aciertos = 0;
+            var errores = 0;
+            
+            /* Palabras */
+            palabras_array.push("EXOSFERA");
+            palabras_array.push("BIOSFERA");
+            palabras_array.push("ASTENOSFERA");
+            palabras_array.push("DENSIDAD");
+            palabras_array.push("ESTRATOSFERA");
+            palabras_array.push("ASTENOSFERA");
+            palabras_array.push("OCEANICAS");
+            palabras_array.push("ATMOSFERA");
+            palabras_array.push("METEOROS");
+            palabras_array.push("TROPOSFERA");
+            palabras_array.push("LITOSFERA");
+            palabras_array.push("MIL");
+            palabras_array.push("ATMOSFERA");
+            palabras_array.push("HIDROSFERA");
+            palabras_array.push("GRADIENTE");
+            palabras_array.push("ATMOSFERA");
+            palabras_array.push("TERMOSFERA");
+            palabras_array.push("NUCLEO");
+            palabras_array.push("ROTACION");
+            palabras_array.push("CINCO");
+            palabras_array.push("TROPOSFERA");
+                    
+            /* Objetos */
+            function Tecla(x, y, ancho, alto, letra){
+                this.x = x;
+                this.y = y;
+                this.ancho = ancho;
+                this.alto = alto;
+                this.letra = letra;
+                this.dibuja = dibujaTecla;
+            }
+            
+            function Letra(x, y, ancho, alto, letra){
+                this.x = x;
+                this.y = y;
+                this.ancho = ancho;
+                this.alto = alto;
+                this.letra = letra;
+                this.dibuja = dibujaCajaLetra;
+                this.dibujaLetra = dibujaLetraLetra;
+            }
+           
+            /* Funciones */
+
+            /* Dibujar Teclas*/
+            function dibujaTecla(){
+                ctx.fillStyle = colorTecla;
+                ctx.strokeStyle = colorMargen;
+                ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+                ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+                
+                ctx.fillStyle = "white";
+                ctx.font = "bold 20px courier";
+                ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
+            }
+            
+            /* Dibua la letra y su caja */
+            function dibujaLetraLetra(){
+                var w = this.ancho;
+                var h = this.alto;
+                ctx.fillStyle = "black";
+                ctx.font = "bold 40px Courier";
+                ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
+            }
+            function dibujaCajaLetra(){
+                ctx.fillStyle = "white";
+                ctx.strokeStyle = "black";
+                ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+                ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+            }
+            
+            
+            /// Funcion para dar pistas al usuario ////
+            function pistaFunction(palabra){
+                let pista = ""; // Creamos una variable local pista que contenga nuestra frase de pista
+                switch(palabra){  // Creamos un switch para poder controlar las pistas segun la palabra 
+                    case 'EXOSFERA':   // Hacemos un case por cada palabra que tenemos
+                        pista = "Capa más delgada de la atmósfera";
+                        break;     // Es importante colocar el break en cada case 
+                    case 'BIOSFERA':
+                        pista = "Se conocen como geósferas externas… Atmósfera, Hidrósfera y________ 😬";
+                        break;
+                    case 'ASTENOSFERA':
+                        pista = "La parte inferior fundida del manto externo se denomina😉:";
+                        break;
+                    case 'DENSIDAD':
+                        pista = "¿Según qué propiedad se organizaron las diferentes sustancias en capas esféricas en la tierra?";
+                        break;
+                    case 'ESTRATOSFERA':
+                        pista = "¿Dónde se encuentra la capa de ozono?🤔";
+                        break;
+                    case 'ASTENOSFERA':
+                        pista = "¿A qué se le conoce como la parte fundida del manto externo?🤔";
+                        break;                    
+                    case 'OCEANICAS':
+                        pista = "El grosor de las placas continentales y ______ difiere😉";
+                        break;                    
+                    case 'ATMOSFERA':
+                        pista = "La _______ cubre completamente las capas esféricas de la tierra:😁";
+                        break;                    
+                    case 'METEOROS':
+                        pista = "Los_______ no se queman en la troposfera🤯";
+                        break;                    
+                    case 'TROPOSFERA':
+                        pista = "¿Dónde se producen la mayoría de los fenómenos meteorológicos?🤯";
+                        break;                    
+                    case 'LITOSFERA':
+                        pista = "La parte comprendida por la corteza y la parte superior del manto externo se denomina🤯:";
+                        break;                    
+                    case 'MIL':
+                        pista = "Cuál es la temperatura de la exosfera en grados centígrados🤓";
+                        break;                    
+                    case 'ATMOSFERA':
+                        pista = "El límite comprendido entre la mesosfera y la termosfera es el lugar más frío 😬 de la ";
+                        break;                    
+                    case 'HIDROSFERA':
+                        pista = "¿Qué capa de la geosfera contiene las aguas de la Tierra en todos los estados físicos? 😁 ";
+                        break;                    
+                    case 'GRADIENTE':
+                        pista = "Al ritmo del aumento de la temperatura interna de la tierra se le conoce como __________ geotérmico";
+                        break;                                  
+                    case 'ATMOSFERA':
+                        pista = "¿Cuál es la capa más externa de la geosfera?😲";
+                        break;
+                    case 'TERMOSFERA':
+                        pista = "¿Cuál de las capas atmosféricas refleja las ondas de radio?😲";
+                        break;
+                    case 'NUCLEO':
+                        pista = "La corteza, el manto y el _____ son las geosferas internas😳";
+                        break;
+                    case 'ROTACION':
+                        pista = "Debido al enfriamiento y la _____. Se arreglaron las distintas sustancias en capas esféricas en la Tierra";
+                        break;
+                    case 'CINCO':
+                        pista = "Según la temperatura cambiante ¿en cuántas capas se puede dividir la atmósfera?🤔";
+                        break;
+                    case 'TROPOSFERA':
+                        pista = "-	¿Dónde se concentra la mayoría de la masa atmosférica?🤔 ";
+                        break;
+                    default:  // Podemos omitir el default // 
+                        pista="No hay pista aún 🤭 ";
+                }
+                // Pintamos la palabra en canvas //
+                ctx.fillStyle = "black";  // Color de la letra
+                ctx.font = "bold 15px Courier";  // Tipo y tamaño de la letra
+                ctx.fillText(pista, 10, 15);  // Variable pista , seguido de la posx y posy
+            }
+           
+                    
+             /* Distribuir nuestro teclado con sus respectivas letras al acomodo de nuestro array */
+            function teclado(){
+                var ren = 0;
+                var col = 0;
+                var letra = "";
+                var miLetra;
+                var x = inicioX;
+                var y = inicioY;
+                for(var i = 0; i < letras.length; i++){
+                    letra = letras.substr(i,1);
+                    miLetra = new Tecla(x, y, lon, lon, letra);
+                    miLetra.dibuja();
+                    teclas_array.push(miLetra);
+                    x += lon + margen;
+                    col++;
+                    if(col==10){
+                        col = 0;
+                        ren++;
+                        if(ren==2){
+                            x = 280;
+                        } else {
+                            x = inicioX;
+                        }
+                    }
+                    y = inicioY + ren * 50;
+                }
+            }
+            
+            
+            /* Obtenemos nuestra palabra aleatoriamente y la dividimos en letras */
+            function pintaPalabra(){
+                var p = Math.floor(Math.random()*palabras_array.length);
+                palabra = palabras_array[p];
+      
+                pistaFunction(palabra);
+            
+                var w = canvas.width;
+                var len = palabra.length;
+                var ren = 0;
+                var col = 0;
+                var y = 230;
+                var lon = 50;
+                var x = (w - (lon+margen) *len)/2;
+                for(var i=0; i<palabra.length; i++){
+                    letra = palabra.substr(i,1);
+                    miLetra = new Letra(x, y, lon, lon, letra);
+                    miLetra.dibuja();
+                    letras_array.push(miLetra);
+                    x += lon + margen;
+                }
+            }
+            
+            /* dibujar al personaje y cada parte segun sea el caso */
+            function horca(errores){
+                var imagen = new Image();
+                imagen.src = "img-juegos/ahorcado"+errores+".png";
+                imagen.onload = function(){
+                    ctx.drawImage(imagen, 390, 0, 230, 230);
+                }
+                /*************************************************
+                // ESTAS SON LAS DISTRIBUCIONES PARA LAS IMÁGENES 
+                Imagen 2 mas pequeña a un lado de la horca //       
+                var imagen = new Image();
+                imagen.src = "imagenes/ahorcado"+errores+".png";
+                imagen.onload = function(){
+                    ctx.drawImage(imagen, 620, 0, 100, 100);
+                }
+                *************************************************/
+            }
+            
+            /* ajustar coordenadas */
+            function ajusta(xx, yy){
+                var posCanvas = canvas.getBoundingClientRect();
+                var x = xx-posCanvas.left;
+                var y = yy-posCanvas.top;
+                return{x:x, y:y}
+            }
+            
+            /* Detecta tecla clickeada y la compara con las de la palabra ya elegida al azar */
+            function selecciona(e){
+                var pos = ajusta(e.clientX, e.clientY);
+                var x = pos.x;
+                var y = pos.y;
+                var tecla;
+                var bandera = false;
+                for (var i = 0; i < teclas_array.length; i++){
+                    tecla = teclas_array[i];
+                    if (tecla.x > 0){
+                        if ((x > tecla.x) && (x < tecla.x + tecla.ancho) && (y > tecla.y) && (y < tecla.y + tecla.alto)){
+                            break;
+                        }
+                    }
+                }
+                if (i < teclas_array.length){
+                    for (var i = 0 ; i < palabra.length ; i++){ 
+                        letra = palabra.substr(i, 1);
+                        if (letra == tecla.letra){ /* Comparamos y vemos si acerto la letra */
+                            caja = letras_array[i];
+                            caja.dibujaLetra();
+                            aciertos++;
+                            bandera = true;
+                        }
+                    }
+                    if (bandera == false){ /* Si falla aumenta los errores y checa si el usuario perdió para mandar a la función de gameover */
+                        errores++;
+                        horca(errores);
+                        if (errores == 5) gameOver(errores);
+                    }
+                    /* Borra la tecla que se a presionado */
+                    ctx.clearRect(tecla.x - 1, tecla.y - 1, tecla.ancho + 2, tecla.alto + 2);
+                    tecla.x - 1;
+                    /* checa si se gano y manda a la función gameover */
+                    if (aciertos == palabra.length) gameOver(errores);
+                }
+            }
+            
+            /* Borramos las teclas y la palabra con sus cajas y mandamos mensaje según el caso, es decir, si se ganó o se perdió */
+            function gameOver(errores){
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "black";
+
+                ctx.font = "bold 50px Courier";
+                if (errores < 5){
+                    ctx.fillText("Súper🥳, la respuesta es ✔️ ", 110, 280);
+                } else {
+                    ctx.fillText("❌La palabra correcta es❌ ", 110, 280);
+                }
+                
+                ctx.font = "bold 80px Courier";
+                lon = (canvas.width - (palabra.length*48))/2;
+                ctx.fillText(palabra, lon, 380);
+                horca(errores);
+            }
+            
+            /* Detectamos si se ha cargado nuestro contexco en el canvas, iniciamos las funciones necesarias para jugar o se le manda mensaje de error segun sea el caso */
+            window.onload = function(){
+                canvas = document.getElementById("pantalla");
+                if (canvas && canvas.getContext){
+                    ctx = canvas.getContext("2d");
+                    if(ctx){
+                        teclado();
+                        pintaPalabra();
+                        horca(errores);
+                        canvas.addEventListener("click", selecciona, false);
+                    } else {
+                        alert ("Error al cargar el contexto!");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
